@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Django APP</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <h1>My Django App</h1>
+    <h2>User Form</h2>
+    {{error}}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button class="boton">
+            Signup
+        </button>
+    </form>
+    {% endblock %}
+</body>
+</html>
